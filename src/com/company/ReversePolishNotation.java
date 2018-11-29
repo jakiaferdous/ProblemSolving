@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Stack;
+
 /*
   Evaluate the value of an arithmetic expression in Reverse Polish Notation. Valid op- erators are +, -, *, /.
   Each operand may be an integer or another expression. For example:
@@ -7,7 +9,6 @@ package com.company;
  ["4", "13", "5", "/", "+"] -> (4 + (13 / 5)) -> 6
  */
 
-import java.util.Stack;
 
 public class ReversePolishNotation {
 
@@ -16,7 +17,6 @@ public class ReversePolishNotation {
         String[] array = {"2", "1", "+", "3", "*"};
         int sum = reversePolishNotation(array);
         System.out.println(sum);
-
     }
 
     public static int reversePolishNotation(String[] str) {
@@ -36,7 +36,6 @@ public class ReversePolishNotation {
         return stack.pop();
 
     }
-
 
     private static int operation(String operator, int num1, int num2) {
 
