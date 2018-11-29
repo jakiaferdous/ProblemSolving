@@ -14,23 +14,25 @@ public class ReverseWordsInString {
         String sentence = "The sky is blue ";
         char[] c = reverseWordInaAString(sentence);
         System.out.println(c);
-
-
     }
 
 
     public static char[] reverseWordInaAString(String sentence) {
 
-        char[]sen =sentence.toCharArray();
-        int j = 0;
-        for (int i = 0; i < sen.length;i++) {
+        if (sentence.length() < 1) {
+            throw new NullPointerException("String lenght is less than 1.");
+        }
 
-            if(sen[i] == ' '){
-                reverseWord(sen,j,i - 1);
-                j = i+1;
+        char[] sen = sentence.toCharArray();
+        int j = 0;
+        for (int i = 0; i < sen.length; i++) {
+
+            if (sen[i] == ' ') {
+                reverseWord(sen, j, i - 1);
+                j = i + 1;
             }
         }
-        reverseWord(sen,0,sen.length -1);
+        reverseWord(sen, 0, sen.length - 1);
         return sen;
 
     }
@@ -41,8 +43,8 @@ public class ReverseWordsInString {
             char tmp = s[min];
             s[min] = s[max];
             s[max] = tmp;
-            min ++;
-            max --;
+            min++;
+            max--;
         }
 
     }

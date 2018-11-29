@@ -22,6 +22,10 @@ public class RotateArray {
 
     public static int[] rotateArray(int[] a, int k) {
 
+        if (a == null || a.length < 1 || k < 1) {
+            throw new NullPointerException("Array size is less than one or k is less than 1.");
+        }
+
         int[] b = new int[a.length];
         int j = 0;
         for (int i = k; i < a.length; i++, j++) {
@@ -34,7 +38,6 @@ public class RotateArray {
             p++;
         }
         return b;
-
     }
 
 
@@ -44,11 +47,11 @@ public class RotateArray {
         int max = array.length - 1;
         reverseArray(array, min, max);
         reverseArray(array, 0, max - k);
-        reverseArray(array,k,max);
+        reverseArray(array, k, max);
 
     }
 
-    public static void reverseArray(int[]a, int min, int max) {
+    public static void reverseArray(int[] a, int min, int max) {
 
         while (min < max) {
             int tmp = a[min];
