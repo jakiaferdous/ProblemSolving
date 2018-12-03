@@ -15,10 +15,10 @@ public class IsomorphicString {
 
     public static boolean isomorphicString(String s, String t){
 
-        if(s == null){
+        if(s == null || t == null){
             return false;
         }
-        if (s.length() == t.length()){
+        if (s.length() != t.length()){
             return false;
         }
         if(s.length() == 1 && t.length() == 1){
